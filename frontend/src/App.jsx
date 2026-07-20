@@ -5,9 +5,10 @@ import BottomNav from './components/BottomNav';
 import ScamChecker from './screens/ScamChecker';
 import CurrencyVerifier from './screens/CurrencyVerifier';
 import FraudReporter from './screens/FraudReporter';
+import LandingPage from './screens/LandingPage';
 
 function AppShell() {
-  const [activeTab, setActiveTab] = useState('scam');
+  const [activeTab, setActiveTab] = useState('landing');
   // Holds text pre-filled into Fraud Reporter when navigated from Scam Checker
   const [reportPrefill, setReportPrefill] = useState('');
 
@@ -23,10 +24,18 @@ function AppShell() {
     setActiveTab(tab);
   };
 
+  if (activeTab === 'landing') {
+    return (
+      <div style={{ background: '#ffffff', minHeight: '100dvh', width: '100vw', overflowX: 'hidden' }}>
+        <LandingPage onNavigate={handleTabChange} />
+      </div>
+    );
+  }
+
   return (
-    <div className="app-shell">
-      <TopBar />
-      <main className="tab-content" key={activeTab}>
+    <div className="app-shell bg-slate-50">
+      <TopBar activeTab={activeTab} setActiveTab={handleTabChange} />
+      <main className="tab-content w-full max-w-4xl mx-auto" key={activeTab}>
         {activeTab === 'scam' && (
           <ScamChecker navigateToReport={navigateToReport} />
         )}

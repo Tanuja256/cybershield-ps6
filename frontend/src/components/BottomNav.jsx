@@ -57,18 +57,18 @@ export default function BottomNav({ activeTab, setActiveTab }) {
 
   return (
     <nav
+      className="md:hidden"
       style={{
         position: 'fixed',
         bottom: 0,
-        left: '50%',
-        transform: 'translateX(-50%)',
+        left: '0',
         width: '100%',
-        maxWidth: '480px',
-        background: 'rgba(15, 23, 42, 0.92)',
+        background: 'rgba(255, 255, 255, 0.95)',
         backdropFilter: 'blur(16px)',
-        borderTop: '1px solid rgba(51, 65, 85, 0.6)',
+        borderTop: '1px solid rgba(226, 232, 240, 0.8)',
         zIndex: 50,
         padding: '0.5rem 0 0.625rem',
+        boxShadow: '0 -1px 3px 0 rgba(0, 0, 0, 0.05)',
       }}
     >
       <div className="flex items-center justify-around">
@@ -109,7 +109,7 @@ export default function BottomNav({ activeTab, setActiveTab }) {
                   fontSize: '0.625rem',
                   fontWeight: active ? 700 : 500,
                   letterSpacing: '0.025em',
-                  background: active ? 'linear-gradient(135deg, #60a5fa, #2dd4bf)' : 'none',
+                  background: active ? 'linear-gradient(135deg, #2563eb, #0d9488)' : 'none',
                   WebkitBackgroundClip: active ? 'text' : 'unset',
                   WebkitTextFillColor: active ? 'transparent' : '#64748b',
                   backgroundClip: active ? 'text' : 'unset',

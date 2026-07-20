@@ -61,18 +61,18 @@ export default function FraudReporter({ initialDescription = '' }) {
             ✅
           </div>
           <div>
-            <h2 style={{ fontSize: '1.1rem', fontWeight: 800, color: '#4ade80', marginBottom: '0.5rem' }}>
+            <h2 style={{ fontSize: '1.1rem', fontWeight: 800, color: '#16a34a', marginBottom: '0.5rem' }}>
               {t.reportSuccess}
             </h2>
             <div
               style={{
-                background: 'rgba(30,41,59,0.8)',
+                background: 'rgba(241,245,249,0.8)',
                 borderRadius: '0.625rem',
                 padding: '0.625rem 1rem',
                 fontFamily: 'monospace',
                 fontSize: '1rem',
                 fontWeight: 700,
-                color: '#93c5fd',
+                color: '#2563eb',
                 letterSpacing: '0.05em',
                 margin: '0 auto',
                 display: 'inline-block',

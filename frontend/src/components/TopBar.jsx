@@ -1,25 +1,36 @@
 import { useLang } from '../context/LangContext';
 
-export default function TopBar() {
+export default function TopBar({ activeTab, setActiveTab }) {
   const { t, toggleLang, lang } = useLang();
+
+  const navItems = [
+    { id: 'scam', label: t.tabScamChecker },
+    { id: 'currency', label: t.tabCurrencyVerifier },
+    { id: 'report', label: t.tabFraudReporter },
+  ];
 
   return (
     <header
       style={{
-        background: 'rgba(15, 23, 42, 0.95)',
+        background: 'rgba(255, 255, 255, 0.95)',
         backdropFilter: 'blur(16px)',
-        borderBottom: '1px solid rgba(51, 65, 85, 0.5)',
-        padding: '0.875rem 1rem',
+        borderBottom: '1px solid rgba(226, 232, 240, 0.8)',
+        padding: '0.875rem 1.5rem',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
         position: 'sticky',
         top: 0,
         zIndex: 40,
+        boxShadow: '0 1px 2px 0 rgba(0, 0, 0, 0.05)',
       }}
     >
-      {/* Brand */}
-      <div className="flex items-center gap-2">
+      {/* Brand & Home */}
+      <button 
+        onClick={() => setActiveTab('landing')}
+        style={{ background: 'none', border: 'none', cursor: 'pointer', textAlign: 'left' }}
+        className="flex items-center gap-2"
+      >
         {/* Shield logo */}
         <div
           style={{
@@ -42,27 +53,56 @@ export default function TopBar() {
         <div>
           <p
             className="gradient-text"
-            style={{ fontSize: '0.875rem', fontWeight: 800, lineHeight: 1.1 }}
+            style={{ fontSize: '1rem', fontWeight: 800, lineHeight: 1.1 }}
           >
             {t.appName}
           </p>
-          <p style={{ fontSize: '0.6rem', color: '#64748b', lineHeight: 1 }}>
+          <p style={{ fontSize: '0.65rem', color: '#64748b', lineHeight: 1, marginTop: '2px' }}>
             {t.appTagline}
           </p>
         </div>
-      </div>
+      </button>
+
+      {/* Desktop Navigation */}
+      <nav className="hidden md:flex items-center gap-6">
+        {navItems.map(item => (
+          <button
+            key={item.id}
+            onClick={() => setActiveTab(item.id)}
+            style={{
+              background: 'none',
+              border: 'none',
+              cursor: 'pointer',
+              fontSize: '0.9rem',
+              fontWeight: activeTab === item.id ? 700 : 500,
+              color: activeTab === item.id ? '#2563eb' : '#64748b',
+              borderBottom: activeTab === item.id ? '2px solid #2563eb' : '2px solid transparent',
+              padding: '0.5rem 0',
+              transition: 'all 0.2s ease'
+            }}
+            onMouseOver={(e) => {
+              if (activeTab !== item.id) e.currentTarget.style.color = '#334155';
+            }}
+            onMouseOut={(e) => {
+              if (activeTab !== item.id) e.currentTarget.style.color = '#64748b';
+            }}
+          >
+            {item.label}
+          </button>
+        ))}
+      </nav>
 
       {/* Language toggle */}
       <button
         id="lang-toggle"
         onClick={toggleLang}
         style={{
-          background: 'linear-gradient(135deg, rgba(37,99,235,0.15), rgba(13,148,136,0.15))',
-          border: '1px solid rgba(59,130,246,0.3)',
+          background: 'rgba(241, 245, 249, 0.8)',
+          border: '1px solid rgba(226, 232, 240, 1)',
           borderRadius: '9999px',
           padding: '0.375rem 0.875rem',
-          color: '#93c5fd',
-          fontWeight: 700,
+          color: '#334155',
+          fontWeight: 600,
           fontSize: '0.75rem',
           cursor: 'pointer',
           display: 'flex',

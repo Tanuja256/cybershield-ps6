@@ -191,7 +191,7 @@ function VerdictCard({ result, t }) {
           <span style={{ fontSize: '0.72rem', color: '#94a3b8' }}>{t.currencyConfidence}</span>
           <span style={{ fontSize: '0.75rem', fontWeight: 800, color: palette.badge.text }}>{pct}%</span>
         </div>
-        <div style={{ height: '7px', background: 'rgba(15,23,42,0.6)', borderRadius: '9999px', overflow: 'hidden' }}>
+        <div style={{ height: '7px', background: 'rgba(226,232,240,1)', borderRadius: '9999px', overflow: 'hidden' }}>
           <div
             style={{
               width: `${pct}%`,
@@ -240,11 +240,11 @@ function VerdictCard({ result, t }) {
                   background:
                     passed === true  ? 'rgba(34,197,94,0.07)' :
                     passed === false ? 'rgba(239,68,68,0.07)' :
-                    'rgba(30,41,59,0.5)',
+                    'rgba(241,245,249,0.8)',
                   border:
                     passed === true  ? '1px solid rgba(34,197,94,0.25)' :
                     passed === false ? '1px solid rgba(239,68,68,0.25)' :
-                    '1px solid rgba(51,65,85,0.35)',
+                    '1px solid rgba(226,232,240,1)',
                 }}
               >
                 {passed === true  ? <CheckIcon /> :
@@ -255,7 +255,7 @@ function VerdictCard({ result, t }) {
                   <p style={{
                     fontSize: '0.8rem',
                     fontWeight: 600,
-                    color: passed === true ? '#86efac' : passed === false ? '#fca5a5' : '#e2e8f0',
+                    color: passed === true ? '#16a34a' : passed === false ? '#dc2626' : '#334155',
                   }}>
                     {label}
                   </p>
@@ -340,7 +340,7 @@ function StatsBar({ t }) {
           className="glass-card"
           style={{ padding: '0.875rem 0.5rem', textAlign: 'center' }}
         >
-          <p style={{ fontSize: '1.05rem', fontWeight: 800, color: '#f1f5f9', lineHeight: 1.1 }}>
+          <p style={{ fontSize: '1.05rem', fontWeight: 800, color: '#0f172a', lineHeight: 1.1 }}>
             {value}
           </p>
           <p style={{ fontSize: '0.6rem', color: '#64748b', marginTop: '0.25rem', lineHeight: 1.2 }}>
@@ -475,7 +475,7 @@ export default function CurrencyVerifier() {
             cursor: 'pointer',
             background: dragging
               ? 'rgba(37,99,235,0.06)'
-              : 'rgba(15,23,42,0.4)',
+              : 'rgba(248,250,252,0.8)',
             transition: 'all 0.2s ease',
           }}
         >
@@ -483,8 +483,8 @@ export default function CurrencyVerifier() {
           <div
             style={{
               width: '4rem', height: '4rem',
-              background: 'rgba(30,41,59,0.8)',
-              border: '1px solid rgba(51,65,85,0.6)',
+              background: 'rgba(241,245,249,0.8)',
+              border: '1px solid rgba(226,232,240,1)',
               borderRadius: '50%',
               display: 'flex', alignItems: 'center', justifyContent: 'center',
             }}
@@ -493,7 +493,7 @@ export default function CurrencyVerifier() {
           </div>
 
           <div style={{ textAlign: 'center' }}>
-            <p style={{ fontWeight: 700, fontSize: '0.95rem', color: '#e2e8f0', marginBottom: '0.3rem' }}>
+            <p style={{ fontWeight: 700, fontSize: '0.95rem', color: '#334155', marginBottom: '0.3rem' }}>
               {t.currencyDropTitle}
             </p>
             <p style={{ fontSize: '0.7rem', color: '#64748b' }}>
@@ -609,8 +609,8 @@ export default function CurrencyVerifier() {
             <button
               onClick={handleRetake}
               style={{
-                background: 'rgba(51,65,85,0.5)',
-                border: '1px solid rgba(71,85,105,0.5)',
+                background: 'rgba(241,245,249,0.8)',
+                border: '1px solid rgba(226,232,240,1)',
                 borderRadius: '0.5rem',
                 padding: '0.3rem 0.65rem',
                 color: '#94a3b8',

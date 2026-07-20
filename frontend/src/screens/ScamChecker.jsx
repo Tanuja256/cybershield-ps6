@@ -271,16 +271,16 @@ function ScamVerdictCard({ result, message, onReport, t }) {
       {advisory && (
         <div
           style={{
-            background: 'rgba(15,23,42,0.5)',
+            background: 'rgba(241,245,249,0.8)',
             border: `1px solid ${palette.outerBorder}`,
             borderRadius: '0.75rem',
             padding: '0.75rem 0.875rem',
           }}
         >
-          <p style={{ fontSize: '0.72rem', fontWeight: 600, color: '#94a3b8', marginBottom: '0.3rem' }}>
+          <p style={{ fontSize: '0.72rem', fontWeight: 600, color: '#475569', marginBottom: '0.3rem' }}>
             Advisory
           </p>
-          <p style={{ fontSize: '0.82rem', color: '#e2e8f0', lineHeight: 1.5 }}>
+          <p style={{ fontSize: '0.82rem', color: '#334155', lineHeight: 1.5 }}>
             {advisory}
           </p>
         </div>
@@ -405,7 +405,7 @@ export default function ScamChecker({ navigateToReport }) {
         <div className="flex flex-col gap-1.5">
           <label
             htmlFor="scam-input"
-            style={{ fontSize: '0.78rem', fontWeight: 600, color: '#93c5fd' }}
+            style={{ fontSize: '0.78rem', fontWeight: 600, color: '#2563eb' }}
           >
             {t.scamInputLabel} *
           </label>
@@ -428,7 +428,7 @@ export default function ScamChecker({ navigateToReport }) {
         <div className="flex flex-col gap-1.5">
           <label
             htmlFor="scam-phone"
-            style={{ fontSize: '0.78rem', fontWeight: 600, color: '#93c5fd' }}
+            style={{ fontSize: '0.78rem', fontWeight: 600, color: '#2563eb' }}
           >
             Phone number{' '}
             <span style={{ fontWeight: 400, color: '#64748b' }}>(optional)</span>
@@ -535,9 +535,9 @@ export default function ScamChecker({ navigateToReport }) {
                 key={i}
                 style={{
                   fontSize: '0.78rem',
-                  color: '#94a3b8',
+                  color: '#334155',
                   padding: '0.5rem 0.75rem',
-                  background: 'rgba(30,41,59,0.5)',
+                  background: 'rgba(241,245,249,0.8)',
                   borderRadius: '0.5rem',
                   lineHeight: 1.45,
                 }}
