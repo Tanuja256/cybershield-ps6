@@ -6,6 +6,7 @@ import ScamChecker from './screens/ScamChecker';
 import CurrencyVerifier from './screens/CurrencyVerifier';
 import FraudReporter from './screens/FraudReporter';
 import LandingPage from './screens/LandingPage';
+import LawEnforcementLogin from './screens/LawEnforcementLogin';
 
 function AppShell() {
   const [activeTab, setActiveTab] = useState('landing');
@@ -30,6 +31,10 @@ function AppShell() {
         <LandingPage onNavigate={handleTabChange} />
       </div>
     );
+  }
+
+  if (activeTab === 'le_login') {
+    return <LawEnforcementLogin onBack={() => handleTabChange('landing')} />;
   }
 
   return (

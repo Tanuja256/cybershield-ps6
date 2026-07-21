@@ -222,7 +222,7 @@ export default function LandingPage({ onNavigate }) {
       {/* Footer link */}
       <div style={{ marginTop: 'auto', paddingTop: '3rem', paddingBottom: '1rem' }}>
         <button 
-          onClick={() => { /* Law Enforcement Login */ }}
+          onClick={() => onNavigate('le_login')}
           style={{ 
             background: 'none', 
             border: 'none', 
