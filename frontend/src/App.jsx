@@ -36,9 +36,9 @@ function AppShell() {
 
   if (activeTab === 'le_login') {
     return (
-      <LawEnforcementLogin 
-        onBack={() => handleTabChange('landing')} 
-        onLogin={() => handleTabChange('le_dashboard')} 
+      <LawEnforcementLogin
+        onBack={() => handleTabChange('landing')}
+        onLogin={() => handleTabChange('le_dashboard')}
       />
     );
   }
@@ -49,17 +49,24 @@ function AppShell() {
 
   return (
     <div className="app-shell bg-slate-50">
-      {activeTab !== 'report' && (
+      {activeTab !== 'report' && activeTab !== 'scam' && activeTab !== 'currency' && (
         <TopBar activeTab={activeTab} setActiveTab={handleTabChange} />
       )}
       <main
-        className={`tab-content w-full ${activeTab === 'report' ? 'report-tab-content' : 'max-w-4xl mx-auto'}`}
+        className={`tab-content w-full ${
+          activeTab === 'report' || activeTab === 'scam' || activeTab === 'currency'
+            ? 'report-tab-content max-w-full flex-1 flex flex-col items-center'
+            : 'max-w-4xl mx-auto'
+        }`}
         key={activeTab}
       >
         {activeTab === 'scam' && (
-          <ScamChecker navigateToReport={navigateToReport} />
+          <ScamChecker
+            navigateToReport={navigateToReport}
+            onNavigate={handleTabChange}
+          />
         )}
-        {activeTab === 'currency' && <CurrencyVerifier />}
+        {activeTab === 'currency' && <CurrencyVerifier onNavigate={handleTabChange} />}
         {activeTab === 'report' && (
           <FraudReporter
             initialDescription={reportPrefill}

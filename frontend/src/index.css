@@ -1,5 +1,5 @@
-@import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap');
+@import "tailwindcss";
 
 @theme {
   --color-primary-50: #eff6ff;
@@ -66,12 +66,13 @@ button, a, input, textarea, select {
 .app-shell {
   display: flex;
   flex-direction: column;
-  height: 100dvh;
+  min-height: 100dvh;
   width: 100vw;
   margin: 0 auto;
   position: relative;
   background: var(--color-surface);
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .tab-content {

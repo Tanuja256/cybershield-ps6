@@ -11,7 +11,7 @@ export function LangProvider({ children }) {
   const t = translations[lang];
 
   return (
-    <LangContext.Provider value={{ lang, toggleLang, t }}>
+    <LangContext.Provider value={{ lang, setLang, toggleLang, t }}>
       {children}
     </LangContext.Provider>
   );

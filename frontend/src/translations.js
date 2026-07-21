@@ -180,7 +180,7 @@ export const translations = {
     scamHelpline: "साइबर हेल्पलाइन: 1930",
 
     // Currency Verifier
-    currencyTitle: "मुद्रा सत्यापक",
+    currencyTitle: "मुद्रा सत्यापन",
     currencySubtitle: "तुरंत AI सत्यापन के लिए नोट की फ़ोटो अपलोड करें",
     currencySelect: "मूल्यवर्ग चुनें",
     currencyRs500: "₹500",
