@@ -144,6 +144,8 @@ export const translations = {
     reportFirDeclaration: "I hereby declare that the facts stated above are true to the best of my knowledge and belief. I understand that filing a false complaint is punishable under IPC Section 182.",
     reportCopied: "Copied to clipboard",
     reportPrefillNotice: "Scam message pre-filled from checker — review and submit",
+    reportBack: "Back",
+    reportBackHi: "वापस",
   },
 
   hi: {
@@ -289,5 +291,7 @@ export const translations = {
     reportFirDeclaration: "मैं घोषणा करता/करती हूँ कि उपरोक्त तथ्य मेरी जानकारी और विश्वास के अनुसार सत्य हैं। मैं समझता/समझती हूँ कि झूठी शिकायत दर्ज करना IPC धारा 182 के तहत दंडनीय है।",
     reportCopied: "क्लिपबोर्ड पर कॉपी किया गया",
     reportPrefillNotice: "स्कैम जाँचक से संदेश पूर्व-भरा गया — समीक्षा करें और जमा करें",
+    reportBack: "वापस",
+    reportBackHi: "Back",
   },
 };

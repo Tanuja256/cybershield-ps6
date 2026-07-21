@@ -280,6 +280,30 @@ export default function FraudReporter({ initialDescription = '', onNavigate }) {
 
       {/* Page title row */}
       <div style={{ padding: '1.25rem 1.5rem 0' }}>
+        <button
+          type="button"
+          onClick={() => onNavigate?.('landing')}
+          style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: '0.375rem',
+            padding: '0.5rem 0.875rem',
+            marginBottom: '1rem',
+            background: '#FFFFFF',
+            border: `1px solid ${BORDER}`,
+            borderRadius: '0.375rem',
+            fontSize: '0.8125rem',
+            fontWeight: 500,
+            color: NAVY,
+            cursor: 'pointer',
+            fontFamily: 'var(--font-sans)',
+          }}
+        >
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+          </svg>
+          {t.reportBack} · {t.reportBackHi}
+        </button>
         <h1 style={{ fontSize: '1.25rem', fontWeight: 700, color: NAVY }}>{t.reportTitle}</h1>
         <p style={{ fontSize: '0.75rem', color: MUTED, marginTop: '2px' }}>{t.reportTitleHi}</p>
       </div>
