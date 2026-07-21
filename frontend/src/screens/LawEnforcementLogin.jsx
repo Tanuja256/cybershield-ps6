@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function LawEnforcementLogin({ onBack }) {
+export default function LawEnforcementLogin({ onBack, onLogin }) {
   return (
     <div style={{
       minHeight: '100dvh',
@@ -142,7 +142,9 @@ export default function LawEnforcementLogin({ onBack }) {
             </div>
 
             {/* Login Button */}
-            <button style={{
+            <button 
+              onClick={onLogin}
+              style={{
               width: '100%',
               padding: '0.875rem',
               backgroundColor: '#0f172a',

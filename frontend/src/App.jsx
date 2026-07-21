@@ -7,6 +7,7 @@ import CurrencyVerifier from './screens/CurrencyVerifier';
 import FraudReporter from './screens/FraudReporter';
 import LandingPage from './screens/LandingPage';
 import LawEnforcementLogin from './screens/LawEnforcementLogin';
+import LawEnforcementDashboard from './screens/LawEnforcementDashboard';
 
 function AppShell() {
   const [activeTab, setActiveTab] = useState('landing');
@@ -34,7 +35,16 @@ function AppShell() {
   }
 
   if (activeTab === 'le_login') {
-    return <LawEnforcementLogin onBack={() => handleTabChange('landing')} />;
+    return (
+      <LawEnforcementLogin 
+        onBack={() => handleTabChange('landing')} 
+        onLogin={() => handleTabChange('le_dashboard')} 
+      />
+    );
+  }
+
+  if (activeTab === 'le_dashboard') {
+    return <LawEnforcementDashboard onNavigate={handleTabChange} />;
   }
 
   return (
