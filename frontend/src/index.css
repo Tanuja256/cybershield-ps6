@@ -86,6 +86,17 @@ button, a, input, textarea, select {
   }
 }
 
+.report-tab-content {
+  padding-bottom: 80px;
+  overflow-y: auto;
+}
+
+@media (min-width: 768px) {
+  .report-tab-content {
+    padding-bottom: 0;
+  }
+}
+
 /* Glass card */
 .glass-card {
   background: rgba(255, 255, 255, 0.9);

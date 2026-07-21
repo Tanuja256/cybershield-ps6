@@ -49,14 +49,22 @@ function AppShell() {
 
   return (
     <div className="app-shell bg-slate-50">
-      <TopBar activeTab={activeTab} setActiveTab={handleTabChange} />
-      <main className="tab-content w-full max-w-4xl mx-auto" key={activeTab}>
+      {activeTab !== 'report' && (
+        <TopBar activeTab={activeTab} setActiveTab={handleTabChange} />
+      )}
+      <main
+        className={`tab-content w-full ${activeTab === 'report' ? 'report-tab-content' : 'max-w-4xl mx-auto'}`}
+        key={activeTab}
+      >
         {activeTab === 'scam' && (
           <ScamChecker navigateToReport={navigateToReport} />
         )}
         {activeTab === 'currency' && <CurrencyVerifier />}
         {activeTab === 'report' && (
-          <FraudReporter initialDescription={reportPrefill} />
+          <FraudReporter
+            initialDescription={reportPrefill}
+            onNavigate={handleTabChange}
+          />
         )}
       </main>
       <BottomNav activeTab={activeTab} setActiveTab={handleTabChange} />
